@@ -9,4 +9,6 @@ router.get('/:productId', ProductControllers.getSingleProductById)
 
 router.post('/', ProductControllers.createProduct)
 
+router.put('/:productId', ProductControllers.updateProduct)
+
 export const ProductRoutes = router

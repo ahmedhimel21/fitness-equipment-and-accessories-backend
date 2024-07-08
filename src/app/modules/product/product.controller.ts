@@ -35,8 +35,21 @@ const createProduct = catchAsync(async (req, res) => {
   })
 })
 
+const updateProduct = catchAsync(async (req, res) => {
+  const { productId } = req.params
+  const product = req.body
+  const result = await ProductServices.updateProductIntoDB(productId, product)
+  sendResponse(res, {
+    statusCode: 200,
+    success: true,
+    message: 'Product has been updated successfully',
+    data: result,
+  })
+})
+
 export const ProductControllers = {
   getProducts,
   getSingleProductById,
   createProduct,
+  updateProduct,
 }
