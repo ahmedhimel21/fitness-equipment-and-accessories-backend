@@ -1,3 +1,4 @@
+import { TProduct } from './product.interface'
 import productModel from './product.model'
 
 const getProductsFromDB = async () => {
@@ -10,7 +11,13 @@ const getSingleProductByIdFromDB = async (productId: string) => {
   return result
 }
 
+const createProductIntoDB = async (product: TProduct) => {
+  const result = await productModel.create(product)
+  return result
+}
+
 export const ProductServices = {
   getProductsFromDB,
   getSingleProductByIdFromDB,
+  createProductIntoDB,
 }
