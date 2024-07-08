@@ -8,11 +8,23 @@ const getProducts = catchAsync(async (req: Request, res: Response) => {
   sendResponse(res, {
     statusCode: 200,
     success: true,
-    message: 'Product retrieved successfully',
+    message: 'Products retrieved successfully',
+    data: result,
+  })
+})
+
+const getSingleProductById = catchAsync(async (req, res) => {
+  const { productId } = req.params
+  const result = await ProductServices.getSingleProductByIdFromDB(productId)
+  sendResponse(res, {
+    statusCode: 200,
+    success: true,
+    message: 'Product retrieved successfully!',
     data: result,
   })
 })
 
 export const ProductControllers = {
   getProducts,
+  getSingleProductById,
 }
