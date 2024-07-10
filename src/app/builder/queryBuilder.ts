@@ -29,15 +29,13 @@ const buildQuery = async <T>(
   ]
   excludesFields.forEach(ele => delete queryObj[ele])
 
-  // console.log(query.category)
-
   // Handle multiple categories
   if (queryObj!.category) {
     const categories = (queryObj!.category as string).split(',')
     queryConstructor = queryConstructor.find({ category: { $in: categories } })
   }
 
-  queryConstructor = queryConstructor.find(queryObj as FilterQuery<T>)
+  // queryConstructor = queryConstructor.find(queryObj as FilterQuery<T>)
 
   //sort query
   let sort = '-createdAt'
