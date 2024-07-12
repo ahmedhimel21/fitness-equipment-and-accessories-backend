@@ -39,6 +39,12 @@ const createProduct = catchAsync(async (req, res) => {
 const updateProduct = catchAsync(async (req, res) => {
   const { productId } = req.params
   const product = req.body
+  // Remove fields with null or empty string values
+  Object.keys(product).forEach(key => {
+    if (product[key] === null || product[key] === '') {
+      delete product[key]
+    }
+  })
   const result = await ProductServices.updateProductIntoDB(productId, product)
   sendResponse(res, {
     statusCode: 200,

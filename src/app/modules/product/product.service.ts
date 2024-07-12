@@ -23,9 +23,13 @@ const updateProductIntoDB = async (
   productId: string,
   product: Partial<TProduct>,
 ) => {
-  const result = await productModel.findByIdAndUpdate(productId, product, {
-    new: true,
-  })
+  const result = await productModel.findByIdAndUpdate(
+    productId,
+    { $set: product },
+    {
+      new: true,
+    },
+  )
   return result
 }
 
