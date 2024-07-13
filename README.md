@@ -1,6 +1,6 @@
 # Fitness Hub Backend
 
-[Live URL](https://car-washing-backend.vercel.app/)
+[Live URL](https://fitness-hub-backend.vercel.app)
 
 ## Table of Contents
 

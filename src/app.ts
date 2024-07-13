@@ -3,11 +3,16 @@ import cors from 'cors'
 import globalErrorHandler from './app/middleware/globalErrorHandler'
 import notFound from './app/middleware/notFoundRoute'
 import { routes } from './app/routes'
-// import { routes } from './app/routes'
 const app: Application = express()
 
+const corsOptions = {
+  origin: 'https://fitness-hub-ruby.vercel.app',
+  methods: ['GET', 'POST', 'PATCH', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}
+
 // middleware
-app.use(cors({ origin: ['http://localhost:5173'] }))
+app.use(cors(corsOptions))
 app.use(express.json())
 
 // application routes

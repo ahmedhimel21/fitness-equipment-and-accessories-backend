@@ -32,7 +32,12 @@ const buildQuery = (modelQuery, query, searchAbleFields) => __awaiter(void 0, vo
         'fields',
     ];
     excludesFields.forEach(ele => delete queryObj[ele]);
-    queryConstructor = queryConstructor.find(queryObj);
+    // Handle multiple categories
+    if (queryObj.category) {
+        const categories = queryObj.category.split(',');
+        queryConstructor = queryConstructor.find({ category: { $in: categories } });
+    }
+    // queryConstructor = queryConstructor.find(queryObj as FilterQuery<T>)
     //sort query
     let sort = '-createdAt';
     if (query === null || query === void 0 ? void 0 : query.sort) {
