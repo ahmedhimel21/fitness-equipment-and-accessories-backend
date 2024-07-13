@@ -1,0 +1,152 @@
+{
+	"info": {
+		"_postman_id": "bb53e2f2-9d99-4e5a-bc97-2419f116deae",
+		"name": "fitness-accessories",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34976651"
+	},
+	"item": [
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "get all products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{fitness-accessories}}/products",
+							"host": [
+								"{{fitness-accessories}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get single product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{fitness-accessories}}/products/668bf7b84ce8c3aa36b67269",
+							"host": [
+								"{{fitness-accessories}}"
+							],
+							"path": [
+								"products",
+								"668bf7b84ce8c3aa36b67269"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Gaming Laptop\",\r\n    \"price\": 1299.99,\r\n    \"description\": \"High-performance gaming laptop with the latest graphics card and processor.\",\r\n    \"category\": \"Computers\",\r\n    \"stock\": 20,\r\n    \"image\": \"https://example.com/images/gaming-laptop.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fitness-accessories}}/products",
+							"host": [
+								"{{fitness-accessories}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update product",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Gaming Laptop test\",\r\n    \"price\": 1000,\r\n    \"description\": \"testing\",\r\n    \"category\": \"Computers test\",\r\n    \"stock\": 30,\r\n    \"image\": \"https://test.com/images/gaming-laptop.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fitness-accessories}}/products/6690b0ebd12c8550c3f4249d",
+							"host": [
+								"{{fitness-accessories}}"
+							],
+							"path": [
+								"products",
+								"6690b0ebd12c8550c3f4249d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{fitness-accessories}}/products/668bfa93242e7e615912f809",
+							"host": [
+								"{{fitness-accessories}}"
+							],
+							"path": [
+								"products",
+								"668bfa93242e7e615912f809"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "create order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userDetails\": {\r\n    \"name\": \"ahmed_himel21\",\r\n    \"email\": \"'ab@gmail.com'\",\r\n    \"phone\": \"'01846343410'\",\r\n    \"address\": \"jashore, bangladesh\",\r\n    \"paymentMethod\": \"'cash'\"\r\n  },\r\n  \" cartItems\": [\r\n    {\r\n      \"_id\": \"668d74946c10e51d94084a8b\",\r\n      \"name\": \"'Resistance Bands Set'\",\r\n      \"price\": 49.99,\r\n     \" description\": \"'Set of resistance bands for strength training.'\",\r\n      \"category\": \"'Gym Equipment'\",\r\n      \"stock\": 20,\r\n     \" image\": \"'https://i.ibb.co/MDNVsd4/bandSet.jpg'\",\r\n     \" quantity\": 4\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fitness-accessories}}/orders",
+							"host": [
+								"{{fitness-accessories}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
