@@ -6,7 +6,7 @@ import { routes } from './app/routes'
 const app: Application = express()
 
 const corsOptions = {
-  origin: 'https://fitness-hub-ruby.vercel.app',
+  origin: 'http://localhost:5173',
   methods: ['GET', 'POST', 'PATCH', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 }
